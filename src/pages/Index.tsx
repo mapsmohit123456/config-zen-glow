@@ -1,11 +1,38 @@
-// Update this page (the content is just a fallback if you fail to update the page)
+import Sidebar from '@/components/dashboard/Sidebar';
+import Topbar from '@/components/dashboard/Topbar';
+import Ticker from '@/components/dashboard/Ticker';
+import { useDashboardStore } from '@/store/dashboardStore';
+import DashboardPage from '@/pages/DashboardPage';
+import PositionsPage from '@/pages/PositionsPage';
+import ConfigurePage from '@/pages/ConfigurePage';
+import PerformancePage from '@/pages/PerformancePage';
+import LogsPage from '@/pages/LogsPage';
+import RiskPage from '@/pages/RiskPage';
+
+const pages: Record<string, React.FC> = {
+  dashboard: DashboardPage,
+  positions: PositionsPage,
+  configure: ConfigurePage,
+  performance: PerformancePage,
+  logs: LogsPage,
+  risk: RiskPage,
+};
 
 const Index = () => {
+  const { page, sidebarCollapsed } = useDashboardStore();
+  const PageComponent = pages[page] || DashboardPage;
+
   return (
-    <div className="flex min-h-screen items-center justify-center bg-background">
-      <div className="text-center">
-        <h1 className="mb-4 text-4xl font-bold">Welcome to Your Blank App</h1>
-        <p className="text-xl text-muted-foreground">Start building your amazing project here!</p>
+    <div className="min-h-screen bg-background">
+      <Sidebar />
+      <div className={`transition-all ${sidebarCollapsed ? 'ml-16' : 'ml-[252px]'}`}>
+        <Topbar />
+        <div className="mt-[62px]">
+          <Ticker />
+          <main className="p-6">
+            <PageComponent />
+          </main>
+        </div>
       </div>
     </div>
   );

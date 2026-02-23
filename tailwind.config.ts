@@ -57,28 +57,36 @@ export default {
           border: "hsl(var(--sidebar-border))",
           ring: "hsl(var(--sidebar-ring))",
         },
+        // Trading tokens
+        cyan: "hsl(var(--cyan))",
+        green: "hsl(var(--green))",
+        "green-bright": "hsl(var(--green-bright))",
+        red: "hsl(var(--red))",
+        amber: "hsl(var(--amber))",
+        purple: "hsl(var(--purple))",
+        t1: "hsl(var(--t1))",
+        t2: "hsl(var(--t2))",
+        t3: "hsl(var(--t3))",
+        t4: "hsl(var(--t4))",
       },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
         sm: "calc(var(--radius) - 4px)",
       },
+      fontFamily: {
+        display: ["Outfit", "sans-serif"],
+        body: ["Space Grotesk", "sans-serif"],
+        mono: ["JetBrains Mono", "monospace"],
+      },
       keyframes: {
         "accordion-down": {
-          from: {
-            height: "0",
-          },
-          to: {
-            height: "var(--radix-accordion-content-height)",
-          },
+          from: { height: "0" },
+          to: { height: "var(--radix-accordion-content-height)" },
         },
         "accordion-up": {
-          from: {
-            height: "var(--radix-accordion-content-height)",
-          },
-          to: {
-            height: "0",
-          },
+          from: { height: "var(--radix-accordion-content-height)" },
+          to: { height: "0" },
         },
       },
       animation: {
