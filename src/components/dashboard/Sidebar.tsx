@@ -8,6 +8,7 @@ const navItems = [
   ]},
   { section: 'Analytics', items: [
     { id: 'performance', icon: '◫', label: 'Performance' },
+    { id: 'advdec', icon: '⇅', label: 'Adv/Dec Analysis' },
     { id: 'logs', icon: '≡', label: 'Trade Logs' },
     { id: 'risk', icon: '◉', label: 'Risk Monitor' },
   ]},

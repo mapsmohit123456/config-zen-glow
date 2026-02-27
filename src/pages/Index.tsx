@@ -8,12 +8,14 @@ import ConfigurePage from '@/pages/ConfigurePage';
 import PerformancePage from '@/pages/PerformancePage';
 import LogsPage from '@/pages/LogsPage';
 import RiskPage from '@/pages/RiskPage';
+import AdvDecPage from '@/pages/AdvDecPage';
 
 const pages: Record<string, React.FC> = {
   dashboard: DashboardPage,
   positions: PositionsPage,
   configure: ConfigurePage,
   performance: PerformancePage,
+  advdec: AdvDecPage,
   logs: LogsPage,
   risk: RiskPage,
 };
